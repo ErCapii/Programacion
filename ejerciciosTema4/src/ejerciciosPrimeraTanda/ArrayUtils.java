@@ -30,10 +30,7 @@ public class ArrayUtils {
 		if (posicion < array.length-1) {
 			recursiva(array,posicion+1);
 		}
-		
-			
-		
-		
 	}
+
 }	
 
