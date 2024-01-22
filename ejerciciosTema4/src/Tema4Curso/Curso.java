@@ -3,11 +3,24 @@ package Tema4Curso;
 public class Curso {
 	private String identificador;
 	private String descripcion;
-	private String alumnos;
+	private Alumno[] alumnos ;
+	
+	
+	
 
-	public Curso(String identificador, String descripcion) {
+	public  void addAlumno(Alumno addAlumno) {
+		for (int i= 0; i < alumnos.length; i++) {
+			if (alumnos[i] == null) {
+				alumnos[i] = addAlumno;
+				break;
+			}
+		}
+	}
+
+	public Curso(String identificador, String descripcion, Integer cantidad) {
 		this.identificador = identificador;
 		this.descripcion = descripcion;
+		alumnos = new Alumno[cantidad];
 	}
 
 	public String getIdentificador() {
@@ -24,6 +37,10 @@ public class Curso {
 
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
+	}
+
+	public Alumno[] getAlumnos() {
+		return alumnos;
 	}
 
 	@Override

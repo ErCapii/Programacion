@@ -10,7 +10,7 @@ public class Alumno extends Persona {
 	private Curso curso;
 
 	public Alumno(String dni) {
-		this.dni = dni.toUpperCase();
+		this.dni = dni;
 
 	}
 
@@ -21,10 +21,13 @@ public class Alumno extends Persona {
 	}
 
 	public String getDni() {
-		return dni.toUpperCase();
+		return dni;
 	}
 
 	public void setDni(String dni) {
+		if (dni != null) {
+			dni = dni.toUpperCase();
+		}
 		this.dni = dni;
 	}
 
@@ -54,9 +57,9 @@ public class Alumno extends Persona {
 		Pattern patron = Pattern.compile("[0-9]{7,8}[A-Z a-z]");
 		Matcher match = patron.matcher(dni);
 		if (match.matches()) {
-			validar = true;
-		} else {
 			validar = false;
+		} else {
+			validar = true;
 		}
 
 		return validar;
@@ -64,22 +67,22 @@ public class Alumno extends Persona {
 	}
 
 	public Boolean validar() {
-		Boolean validar=false;
-		
-		if (getNombre() == null || getNombre().length() <10) {
+		Boolean validar = false;
+
+		if (getNombre() == null || getNombre().length() < 10) {
 			System.out.println("El nombre no puede estar vacio y tiene que tener 10 caracteres como minimo");
-			validar=true;
-		}else if (curso.getIdentificador()== null || curso.getDescripcion() == null){
+			validar = true;
+		} else if (curso.getIdentificador() == null || curso.getDescripcion() == null) {
 			System.out.println("El curso no puede estar vacio");
-			validar=true;
-		}else if (getEdad() ==null || getEdad() <12 || getEdad() >65) {
+			validar = true;
+		} else if (getEdad() == null || getEdad() < 12 || getEdad() > 65) {
 			System.out.println("La edad no puede estar vacio y tiene que estar comprendidad entre 12 y 65 años");
-			validar=true;
-		}else
-			validar=false;
-		
+			validar = true;
+		} else
+			validar = false;
+
 		return validar;
-		
+
 	}
 
 	@Override
