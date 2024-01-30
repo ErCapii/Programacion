@@ -46,6 +46,7 @@ public class Semaforo {
 
 		
 	}
+	
 
 	public void cambiarEstado() {
 		if (color.equals(ROJO)) {

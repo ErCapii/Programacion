@@ -1,38 +1,43 @@
 package Tema4Curso;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class AppAlumno {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 
-		Alumno[] arrayAlumno = new Alumno[3];
-
-		Curso curso = new Curso("1", "DAM-DAW", arrayAlumno.length);
-		Boolean salir = false;
-		for (int i = 0; i < arrayAlumno.length; i++) {
+		//Alumno[] arrayAlumno = new Alumno[3];
+		
+		Curso curso = new Curso("1", "DAM-DAW", listaAlumno.size());
+		Boolean salir = true;
+		Alumno alumno;
+		for (int i = 0; i < 3; i++) {
+			curso.addAlumno(alumno);
 			do {
 				do {
 					System.out.println("Dni del alumno ");
-					arrayAlumno[i] = new Alumno(sc.nextLine());
-					curso.addAlumno(arrayAlumno[i]);
-					;
-				} while (arrayAlumno[i].validarDNI());
+					alumno = new Alumno(sc.nextLine());
+				} while (alumno.validarDNI());
 				System.out.println("Nombre del alumno ");
-				arrayAlumno[i].setNombre(sc.nextLine());
+				alumno.setNombre(sc.nextLine());
 				System.out.println("Edad del alumno ");
-				arrayAlumno[i].setEdad(sc.nextInt());
+				alumno.setEdad(sc.nextInt());
 				System.out.println("Nota del alumno ");
-				arrayAlumno[i].setNota(sc.nextInt());
-				arrayAlumno[i].setCurso(curso);
+				alumno.setNota(sc.nextInt());
+				alumno.setCurso(curso);
 				sc.nextLine();
-				if (arrayAlumno[i].validar()) {
+				if (alumno.validar()) {
 					System.out.println("Alumno " + (i + 1));
 					salir = true;
 				} else {
 					salir = false;
 				}
+				
+				
 			} while (salir);
+				
 		}
 
 		if (arrayAlumno[0].equals(arrayAlumno[1]) || arrayAlumno[0].equals(arrayAlumno[2])
@@ -61,7 +66,7 @@ public class AppAlumno {
 				System.out.println("/t" + arrayAlumno[i]);
 			}
 		}
-
+*/
 		sc.close();
 	}
 

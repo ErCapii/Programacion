@@ -1,26 +1,24 @@
 package Tema4Curso;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Curso {
 	private String identificador;
 	private String descripcion;
-	private Alumno[] alumnos ;
+	private List<Alumno> alumno = new ArrayList<>() ;
 	
 	
 	
 
 	public  void addAlumno(Alumno addAlumno) {
-		for (int i= 0; i < alumnos.length; i++) {
-			if (alumnos[i] == null) {
-				alumnos[i] = addAlumno;
-				break;
-			}
-		}
+		alumno.add(addAlumno);
 	}
 
 	public Curso(String identificador, String descripcion, Integer cantidad) {
 		this.identificador = identificador;
 		this.descripcion = descripcion;
-		alumnos = new Alumno[cantidad];
+//		alumno = new Alumno[cantidad];
 	}
 
 	public String getIdentificador() {
@@ -39,7 +37,7 @@ public class Curso {
 		this.descripcion = descripcion;
 	}
 
-	public Alumno[] getAlumnos() {
+	public alumno getAlumnos() {
 		return alumnos;
 	}
 
