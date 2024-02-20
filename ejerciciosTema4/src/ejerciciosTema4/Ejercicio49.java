@@ -1,0 +1,50 @@
+package ejerciciosTema4;
+
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Scanner;
+import java.util.Set;
+
+public class Ejercicio49 {
+public static void main(String[] args) {
+	
+	Scanner sc = new Scanner(System.in);
+	Set<String> lista = new HashSet<>();
+	Set<String> lista2 = new HashSet<>();
+	
+	
+	for (int i = 1; i < 6; i++) {
+		System.out.println("cadena "+i);
+		lista.add(sc.nextLine());
+		
+	}
+	System.out.println(lista);
+	for (String string : lista) {
+		
+	}
+	
+	for (String string : lista) {
+		lista2.add(string.toUpperCase());
+	}
+		lista=lista2;
+	
+	System.out.println(lista);
+	Boolean vacia= lista.contains("");
+	if (vacia) {
+		System.out.println("Hay una cadena vacia");
+	}
+	
+	for (Iterator<String> iterator = lista.iterator(); iterator.hasNext();) {
+		String cadena = (String) iterator.next();
+		
+		if(cadena.length()<6) {
+			iterator.remove();
+		}
+	}
+	System.out.println(lista);
+	}
+	
+
+}

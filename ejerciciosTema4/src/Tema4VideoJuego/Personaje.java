@@ -1,12 +1,12 @@
 package Tema4VideoJuego;
 
 
-public class Personaje {
+public abstract class  Personaje {
 	private String nombre;
 	private String codigo;
-	private Integer vida;
-	private Integer daño;
-	private Integer dañoXSegundo;
+	protected Integer vida;
+	protected Integer daño;
+	protected Integer dañoXSegundo;
 	
 	
 

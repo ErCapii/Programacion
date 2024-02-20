@@ -2,11 +2,7 @@ package Tema4Fecha;
 
 public class FechaImpl implements IFecha{
 
-	@Override
-	public void cambiar(Integer dia, Integer mes, Integer año) {
-		// TODO Auto-generated method stub
-		
-	}
+	
 
 	@Override
 	public void actual() {

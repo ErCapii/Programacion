@@ -1,14 +1,13 @@
 package Tema4Fecha;
 
-
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public interface IFecha {
 
-
-	public void cambiar(Integer dia, Integer mes, Integer año);
-	/** Marca la fecha actual
-	 * 
-	 */
+	public void setFecha(LocalDate fecha);
+	
+	
 	public void actual();
 	public String tostring();
 	/** Valida la fecha para saber si es valida
@@ -16,7 +15,7 @@ public interface IFecha {
 	 * @return
 	 */
 	public Boolean validar();
-	public void cambiarFormato(Boolean patron);
+	public void cambiarFormato(DateTimeFormatter patron);
 	public boolean equals(Object obj);
 	public Integer getDiaMes(Integer dia,Integer mes);
 	public Integer getMes(Integer mes);
